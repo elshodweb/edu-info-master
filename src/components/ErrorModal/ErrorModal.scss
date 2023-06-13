@@ -1,0 +1,36 @@
+.error-modal {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: #ff9393dd;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  max-width: 500px;
+  padding: 20px;
+  color: black;
+  font-size: 18px;
+  line-height: 150%;
+  opacity: 0;
+  visibility: hidden;
+  &.active {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+  }
+  .decorate {
+    border: 2px solid white;
+    flex:  1 0 auto;
+    border-radius: 50%;
+    font-size: 36px;
+    color: white;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}

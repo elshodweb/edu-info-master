@@ -1,0 +1,23 @@
+.login {
+  .form {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 400px;
+    margin: 40px auto;
+  }
+  .input,
+  .btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  .input {
+    border: 1px solid #b1b1b1;
+    background: #d8d8d8;
+    color: #454444;
+  }
+}
