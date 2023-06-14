@@ -1,0 +1,46 @@
+.footer {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  padding: 30px;
+}
+.footer__row {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 100px;
+}
+.footer__title{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  
+}
+.footer__section {
+}
+.footer__logo {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.footer__contact {
+  a {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    
+  }
+  &:hover span {
+    border-bottom: 1px solid #fff;
+  }
+  span {
+    border-bottom: 1px solid #000;
+    transition: all 0.2s;
+  }
+}
+.footer__licences {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
