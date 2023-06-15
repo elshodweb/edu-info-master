@@ -11,7 +11,7 @@ function Header() {
             <Link className="header__nav-item" to={"/"}>
               About
             </Link>
-            <Link className="header__nav-item" to={"/courses"}>
+            <Link className="header__nav-item" to={"/Categories"}>
               Courses
             </Link>
             {/* <Link className="header__nav-item" to={'/add'}>Courses</Link> */}

@@ -20,7 +20,7 @@ function Centers() {
     });
     getData("/categories").then((res) => {
       if (res?.status == 200) {
-        setCatgories(res.data);
+        setCatgories(res.data.filter(i=>i.category_is_active));
       }
     });
   }, []);

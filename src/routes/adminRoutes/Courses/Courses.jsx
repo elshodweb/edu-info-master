@@ -95,7 +95,7 @@ function Courses() {
                         .filial_name}
                   </td>
                   <td className="btn">
-                    <button onClick={() => onDelete(item.coours_id)}>
+                    <button onClick={() => onDelete(item.cours_id)}>
                       Delete
                     </button>
                   </td>

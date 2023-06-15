@@ -11,7 +11,7 @@ function UserCours({ setIds, ids }) {
         setDataArray(
           res.data.filter(
             (i) => i.cours_is_active
-            // && i.cours_category_id === id
+            && i.cours_filial_id === ids.filial
           )
         );
       }
@@ -20,6 +20,8 @@ function UserCours({ setIds, ids }) {
   if (dataArray === null) {
     return "...loading";
   }
+
+  console.log(dataArray);
   return (
     <div className="courses">
       <h1 className="path">
@@ -32,15 +34,37 @@ function UserCours({ setIds, ids }) {
         dataArray.map((item, index) => {
           return (
             <div className="cours" key={index}>
-              <div className="cours-info">
-                <Link to={"/courses/" + item.cours_id}>
-                  <div
-                    onClick={() => setIds({ cours: item.cours_id })}
-                    className="cours-name"
-                  >
-                    {item.cours_name}
+              <div className="cours__info">
+                <div className="cours__section">
+                  <Link to={"/courses/" + item.cours_id}>
+                    <div
+                      onClick={() => setIds({ ...ids, cours: item.cours_id })}
+                      className="cours__name"
+                    >
+                      {item.cours_name}
+                    </div>
+                  </Link>
+                  <div className="cours__item">
+                    <strong>price: </strong>
+                    <span>{item.cours_price}</span>
                   </div>
-                </Link>
+                  <div className="cours__item">
+                    <strong>started date: </strong>
+                    <span>{item.cours_started_date}</span>
+                  </div>
+                  <div className="cours__item">
+                    <strong>total duration: </strong>
+                    <span>{item.cours_total_duration}</span>
+                  </div>
+                  <div className="cours__item">
+                    <strong>lesson duration: </strong>
+                    <span>{item.cours_lesson_duration}</span>
+                  </div>
+                  <div className="cours__item">
+                    <strong>exam info: </strong>
+                    <span>{item.cours_exam_info}</span>
+                  </div>
+                </div>
               </div>
             </div>
           );

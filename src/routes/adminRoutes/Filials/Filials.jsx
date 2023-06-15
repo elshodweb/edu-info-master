@@ -20,7 +20,7 @@ function Filials() {
     });
     getData("/centers").then((res) => {
       if (res?.status == 200) {
-        setCenters(res.data);
+        setCenters(res.data.filter(i=>i.center_is_active));
       }
     });
   }, []);

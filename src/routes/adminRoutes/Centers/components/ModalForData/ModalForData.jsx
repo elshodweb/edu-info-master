@@ -8,7 +8,7 @@ function ModalForData({ isActive, categories, uploadObject, setDataArray }) {
     name: "",
     about: "",
     telegram: "",
-    categoryId: "",
+    categoryId: categories?.[0]?.category_id,
     phone: "",
     instagram: "",
   });
@@ -28,13 +28,12 @@ function ModalForData({ isActive, categories, uploadObject, setDataArray }) {
         name: "",
         about: "",
         telegram: "",
-        categoryId: "",
+        categoryId: categories?.[0]?.category_id,
         phone: "",
         instagram: "",
       });
     }
-  }, [uploadObject]);
-
+  }, [uploadObject, categories]);
   let func = (res) => {
     if (res && res.status === 200) {
       getData("/centers").then((res) => {
@@ -42,20 +41,20 @@ function ModalForData({ isActive, categories, uploadObject, setDataArray }) {
           setDataArray(res.data);
         }
       });
+      setObj({
+        name: "",
+        about: "",
+        telegram: "",
+        categoryId: categories?.[0]?.category_id,
+        phone: "",
+        instagram: "",
+      });
     } else {
       setMessage(res);
       setTimeout(() => {
         setMessage("");
       }, 3000);
     }
-    setObj({
-      name: "",
-      about: "",
-      telegram: "",
-      categoryId: "",
-      phone: "",
-      instagram: "",
-    });
   };
 
   function submitForm(e) {
@@ -81,12 +80,6 @@ function ModalForData({ isActive, categories, uploadObject, setDataArray }) {
           onChange={(e) => setObj({ ...obj, name: e.target.value })}
         />
 
-        <input
-          type="text"
-          value={obj.about}
-          placeholder="center about"
-          onChange={(e) => setObj({ ...obj, about: e.target.value })}
-        />
         <input
           type="text"
           value={obj.phone}
@@ -118,6 +111,13 @@ function ModalForData({ isActive, categories, uploadObject, setDataArray }) {
                 </option>
               ))}
         </select>
+        <div>
+          <textarea
+            value={obj.about}
+            onChange={(e) => setObj({ ...obj, about: e.target.value })}
+            placeholder="center about"
+          ></textarea>
+        </div>
         <button>{uploadObject ? "save" : "add"}</button>
       </form>
     </div>

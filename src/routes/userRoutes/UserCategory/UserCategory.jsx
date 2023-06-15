@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./UserCategory.scss";
+import icon from "./../../../assets/isons/rectangle.png";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
-function UserCategory({ setIds }) {
+function UserCategory({ ids,setIds }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
     getData("/categories").then((res) => {
@@ -29,11 +30,12 @@ function UserCategory({ setIds }) {
                   <Link to={"/centers"}>
                     <div
                       onClick={() => {
-                        setIds({ category: item.category_id });
+                        setIds({...ids, category: item.category_id });
                       }}
                       className="category-name"
                     >
-                      {item.category_name}
+                      <img width={25} src={icon} alt="icon" />
+                      <span>{item.category_name}</span>
                     </div>
                   </Link>
                 </div>

@@ -10,7 +10,7 @@ function Dashboard({ routerPath }) {
 
 
   return (
-    <div className="row">
+    <div className="dashbaord">
       <NavBar />
       <main className="main">
         <h1 className="title">{path?path.toUpperCase():'CATEGORIES'}</h1>

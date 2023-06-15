@@ -8,7 +8,7 @@ function ModalForData({ isActive, centers, uploadObject, setDataArray }) {
     name: "",
     about: "",
     telegram: "",
-    centerId: "",
+    centerId: centers?.[0]?.center_id,
     phone: "",
     location: "",
   });
@@ -27,13 +27,12 @@ function ModalForData({ isActive, centers, uploadObject, setDataArray }) {
         name: "",
         about: "",
         telegram: "",
-        centerId: "",
+        centerId: centers?.[0]?.center_id,
         phone: "",
         location: "",
       });
     }
-  }, [uploadObject]);
-
+  }, [uploadObject, centers]);
   let func = (res) => {
     if (res && res.status === 200) {
       getData("/filials").then((res) => {
@@ -41,22 +40,22 @@ function ModalForData({ isActive, centers, uploadObject, setDataArray }) {
           setDataArray(res.data);
         }
       });
+      setObj({
+        name: "",
+        about: "",
+        telegram: "",
+        centerId: centers?.[0]?.center_id,
+        phone: "",
+        location: "",
+      });
     } else {
       setMessage(res);
       setTimeout(() => {
         setMessage("");
       }, 3000);
     }
-    setObj({
-      name: "",
-      about: "",
-      telegram: "",
-      centerId: "",
-      phone: "",
-      location: "",
-    });
   };
-
+  console.log(obj);
   function submitForm(e) {
     e.preventDefault();
     if (uploadObject) {

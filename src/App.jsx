@@ -47,7 +47,6 @@ function App() {
       setIsAuth(false);
     }
   }
-  console.log(ids);
   return (
     <div className="App">
       <ErrorModal message={message} />
@@ -58,7 +57,7 @@ function App() {
           <Route path="centers" element={<UserCenter ids={ids} setIds={setIds} />} />
           <Route path="filials" element={<UserFilial ids={ids} setIds={setIds} />} />
           <Route path="courses" element={<UserCours ids={ids} setIds={setIds} />} />
-          <Route path="courses/:id" element={<SingleCourse ids={ids} setIds={setIds} />} />
+          <Route path="courses/:id" element={<SingleCourse ids={ids}  />} />
         </Route>
         <Route
           path="login"

@@ -1,0 +1,24 @@
+.category {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #777;
+  border-radius: 5px;
+  max-width: 500px;
+  transition: all 0.2s;
+  background: #f0f0f0;
+
+  &:hover {
+    background: #fff;
+    border: 2px solid #444;
+    box-shadow: 1px 1px 4px #000;
+    transform: scale(1.03) translate(-2px, 0px);
+  }
+}
+.category-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
