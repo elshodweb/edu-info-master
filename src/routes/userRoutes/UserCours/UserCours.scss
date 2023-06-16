@@ -22,13 +22,29 @@
 .cours__section {
   min-width: 30%;
 }
-.cours__item{
+.cours__item {
   font-size: 18px;
   margin: 10px;
-  strong{
+  strong {
     text-transform: capitalize;
   }
-  span{
+  span {
     margin-left: 10px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .cours__item {
+    font-size: 14px;
+    margin: 5px;
+    line-height: 150%;
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  .cours__name{
+
+  font-weight: 600;
+  font-size: 16px;
   }
 }

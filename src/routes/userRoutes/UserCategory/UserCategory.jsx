@@ -3,6 +3,7 @@ import "./UserCategory.scss";
 import icon from "./../../../assets/isons/rectangle.png";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
+import Loading from "../../../components/Loading/Loading";
 function UserCategory({ ids,setIds }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
@@ -13,7 +14,7 @@ function UserCategory({ ids,setIds }) {
     });
   }, []);
   if (dataArray === null) {
-    return "...loading";
+    return <Loading />;
   }
   return (
     <div className="categories">

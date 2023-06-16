@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./SingleCourse.scss";
 import { Link, useParams } from "react-router-dom";
+import clock from "../../../assets/isons/clock.png";
 import getData from "../../../axios/getData";
+import Loading from "../../../components/Loading/Loading";
 function SingleCourse({ ids }) {
   let { id } = useParams();
   let [data, setData] = useState(null);
@@ -20,15 +22,19 @@ function SingleCourse({ ids }) {
     });
   }, []);
   if (data === null || filial === null) {
-    return "...loading";
+    return <Loading />;
   }
   return (
     <div className="single-cours">
       <h1 className="path">
-        <Link to={"/categories"}>Categories</Link>/
-        <Link to={"/centers"}>Centers</Link>/
-        <Link to={"/filials"}>Filials</Link>/
-        <Link to={"/courses"}>Courses</Link>/
+        <Link to={"/categories"}>Categories</Link>
+        <span> / </span>
+        <Link to={"/centers"}>Centers</Link>
+        <span> / </span>
+        <Link to={"/filials"}>Filials</Link>
+        <span> / </span>
+        <Link to={"/courses"}>Courses</Link>
+        <span> / </span>
         <Link to={"/courses/" + data.cours_id}>{data.cours_name}</Link>
       </h1>
       <div className="single-cours__item">
@@ -70,13 +76,17 @@ function SingleCourse({ ids }) {
         </>
       }
 
-      <div className="single-cours__item">
+      <div className="single-cours__descr">
         <strong>about: </strong> <span>{data.cours_about}</span>
       </div>
 
       <div className="single-cours__item">
-        <strong>created date: </strong>{" "}
-        <span>{data.cours_created_at.split("T")[0]}</span>
+        <strong>
+          <span>
+            <img width={20} src={clock} alt="clock" />
+          </span>{" "}
+          <span>{data.cours_created_at.split("T")[0]}</span>
+        </strong>
       </div>
     </div>
   );

@@ -50,12 +50,14 @@ function Courses() {
           setModalIsActive(false);
         }}
       >
-      <span className="pluss">+</span> <span>NEW {nameRoute.toUpperCase()}</span>
+        <span className="pluss">+</span>{" "}
+        <span>NEW {nameRoute.toUpperCase()}</span>
       </button>
       <ModalForData
         isActive={modalIsActive}
         setModalIsActive={setModalIsActive}
         uploadObject={uploadObject}
+        setUploadObject={setUploadObject}
         setDataArray={setDataArray}
         filials={filials}
       />

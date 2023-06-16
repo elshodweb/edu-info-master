@@ -22,6 +22,7 @@
 }
 .center__item-date {
   font-weight: 600;
+  text-transform: capitalize;
 }
 .center__name {
   display: inline-block;
@@ -42,4 +43,28 @@
   line-height: 150%;
   text-indent: 10px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 720px) {
+  
+  .center__row{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width:560px) {
+  .center__descr{
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .center__item{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:380px) {
+  .center__descr{
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
 }

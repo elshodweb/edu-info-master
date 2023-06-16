@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import telegram from "../../../assets/isons/telegram-black.png";
 import instagram from "../../../assets/isons/instagram-black.png";
 import phone from "../../../assets/isons/phone-black.png";
+import clock from "../../../assets/isons/clock.png";
+import Loading from "../../../components/Loading/Loading";
 
 function UserCenter({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
@@ -20,12 +22,13 @@ function UserCenter({ setIds, ids }) {
     });
   }, []);
   if (dataArray === null) {
-    return "...loading";
+    return <Loading />;
   }
   return (
     <div className="centers">
       <h1 className="path">
-        <Link to={"/categories"}>Categories</Link>/
+        <Link to={"/categories"}>Categories</Link>
+        <span> / </span>
         <Link to={"/centers"}>Centers</Link>
       </h1>
       {dataArray.length > 0 ? (
@@ -41,23 +44,25 @@ function UserCenter({ setIds, ids }) {
                     >
                       <div className="center__name">{item.center_name}</div>
                     </Link>
-                    <div className="center__item">
-                      <img width={20} src={instagram} alt="instagram" />
-                      <span>{item.center_instagram}</span>
-                    </div>
-                    <div className="center__item">
-                      <img width={20} src={phone} alt="phone" />
-                      <span>{item.center_phone}</span>
-                    </div>
-                    <div className="center__item">
-                      <img width={20} src={telegram} alt="telegram" />
-                      <span>{item.center_telegram}</span>
+                    <div>
+                      <div className="center__item">
+                        <img width={20} src={instagram} alt="instagram" />
+                        <span>{item.center_instagram}</span>
+                      </div>
+                      <div className="center__item">
+                        <img width={20} src={phone} alt="phone" />
+                        <span>{item.center_phone}</span>
+                      </div>
+                      <div className="center__item">
+                        <img width={20} src={telegram} alt="telegram" />
+                        <span>{item.center_telegram}</span>
+                      </div>
                     </div>
                   </div>
                   <div className="center__section">
                     <div className="center__descr">{item.center_about}</div>
                     <div className="center__item center__item-date">
-                      <span>created at : </span>
+                      <span><img width={20} src={clock} alt="clock" /> </span>
                       <strong>
                         {item.center_created_at
                           .split(".")[0]

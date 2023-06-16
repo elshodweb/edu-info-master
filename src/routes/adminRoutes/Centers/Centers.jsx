@@ -56,6 +56,7 @@ function Centers() {
         setModalIsActive={setModalIsActive}
         uploadObject={uploadObject}
         setDataArray={setDataArray}
+        setUploadObject={setUploadObject}
         categories={categories}
       />
       <table>

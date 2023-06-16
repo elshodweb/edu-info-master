@@ -12,7 +12,6 @@ const postData = async (path, data) => {
       return res;
     }
   } catch (error) {
-    console.log(error);
     return error.response.data.message;
   }
 };

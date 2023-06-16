@@ -3,7 +3,7 @@ import postData from "../../../../../axios/postData";
 import getData from "../../../../../axios/getData";
 import updateData from "../../../../../axios/updateData";
 import ErrorModal from "../../../../../components/ErrorModal/ErrorModal";
-function ModalForData({ isActive, filials, uploadObject, setDataArray }) {
+function ModalForData({ isActive, filials, uploadObject, setDataArray,setUploadObject }) {
   const [obj, setObj] = useState({
     name: "",
     about: "",
@@ -73,6 +73,7 @@ function ModalForData({ isActive, filials, uploadObject, setDataArray }) {
       updateData("/courses/" + uploadObject.cours_id, obj).then((res) => {
         func(res);
       });
+      setUploadObject(null);
     } else {
       postData("/courses", obj).then((res) => {
         func(res);
@@ -87,44 +88,38 @@ function ModalForData({ isActive, filials, uploadObject, setDataArray }) {
         <input
           type="text"
           value={obj.name}
-          placeholder="center name"
+          placeholder="course name"
           onChange={(e) => setObj({ ...obj, name: e.target.value })}
         />
 
         <input
           type="text"
-          value={obj.about}
-          placeholder="center about"
-          onChange={(e) => setObj({ ...obj, about: e.target.value })}
-        />
-        <input
-          type="text"
           value={obj.price}
-          placeholder="center price"
+          placeholder="course price"
           onChange={(e) => setObj({ ...obj, price: e.target.value })}
         />
         <input
           type="text"
           value={obj.lessonDuration}
-          placeholder="center lessonDuration"
+          placeholder="course lessonDuration"
           onChange={(e) => setObj({ ...obj, lessonDuration: e.target.value })}
         />
         <input
           type="text"
           value={obj.totalDuration}
-          placeholder="center totalDuration"
+          placeholder="course totalDuration"
           onChange={(e) => setObj({ ...obj, totalDuration: e.target.value })}
         />
         <input
           type="text"
           value={obj.examInfo}
-          placeholder="center examInfo"
+          placeholder="course examInfo"
           onChange={(e) => setObj({ ...obj, examInfo: e.target.value })}
         />
         <input
           type="text"
           value={obj.courseStartedDate}
-          placeholder="center courseStartedDate"
+          placeholder="course courseStartedDate"
           onChange={(e) =>
             setObj({ ...obj, courseStartedDate: e.target.value })
           }
@@ -142,6 +137,14 @@ function ModalForData({ isActive, filials, uploadObject, setDataArray }) {
                 </option>
               ))}
         </select>
+
+        <div>
+          <textarea
+            value={obj.about}
+            placeholder="course about"
+            onChange={(e) => setObj({ ...obj, about: e.target.value })}
+          ></textarea>
+        </div>
         <button>{uploadObject ? "save" : "add"}</button>
       </form>
     </div>

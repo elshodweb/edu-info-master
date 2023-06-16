@@ -1,11 +1,38 @@
-.single-cours{
-
+.single-cours {
 }
-.single-cours__item{
+.single-cours__item {
   margin: 20px;
   font-size: 18px;
-  strong{
+  strong {
     text-transform: capitalize;
     margin-right: 10px;
+  }
+}
+.single-cours__descr {
+  font-size: 18px;
+  margin: 30px 20px;
+  line-height: 160%;
+  strong {
+    text-transform: capitalize;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .single-cours__item {
+    margin: 5px;
+    font-size: 14px;
+    line-height: 150%;
+    strong {
+      margin-right: 5px;
+    }
+  }
+  .single-cours__descr {
+    font-size: 14px;
+    margin: 15px 10px;
+    line-height: 150%;
+    strong {
+      margin-right: 5px;
+    }
   }
 }

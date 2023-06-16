@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import telegram from "../../../assets/isons/telegram-black.png";
 import location from "../../../assets/isons/location-black.png";
 import phone from "../../../assets/isons/phone-black.png";
+import Loading from "../../../components/Loading/Loading";
 function UserFilial({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
@@ -12,21 +13,22 @@ function UserFilial({ setIds, ids }) {
       if (res?.status == 200) {
         setDataArray(
           res.data.filter(
-            (i) => i.filial_is_active
-            && i.filial_center_id === ids.center
+            (i) => i.filial_is_active && i.filial_center_id === ids.center
           )
         );
       }
     });
   }, []);
   if (dataArray === null) {
-    return "...loading";
+    return <Loading />;
   }
   return (
     <div className="filials">
       <h1 className="path">
-        <Link to={"/categories"}>Categories</Link>/
-        <Link to={"/centers"}>Centers</Link>/
+        <Link to={"/categories"}>Categories</Link>
+        <span> / </span>
+        <Link to={"/centers"}>Centers</Link>
+        <span> / </span>
         <Link to={"/filials"}>Filials</Link>
       </h1>
       {dataArray.length > 0 ? (
@@ -36,7 +38,7 @@ function UserFilial({ setIds, ids }) {
               <div className="filial__info">
                 <Link to={"/courses"}>
                   <div
-                    onClick={() => setIds({...ids, filial: item.filial_id })}
+                    onClick={() => setIds({ ...ids, filial: item.filial_id })}
                     className="filial__name"
                   >
                     {item.filial_name}

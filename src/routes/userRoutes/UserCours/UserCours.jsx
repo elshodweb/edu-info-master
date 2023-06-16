@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./UserCours.scss";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
+import Loading from "../../../components/Loading/Loading";
 function UserCours({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
 
@@ -10,24 +11,25 @@ function UserCours({ setIds, ids }) {
       if (res?.status == 200) {
         setDataArray(
           res.data.filter(
-            (i) => i.cours_is_active
-            && i.cours_filial_id === ids.filial
+            (i) => i.cours_is_active && i.cours_filial_id === ids.filial
           )
         );
       }
     });
   }, []);
   if (dataArray === null) {
-    return "...loading";
+    return <Loading />;
   }
 
-  console.log(dataArray);
   return (
     <div className="courses">
       <h1 className="path">
-        <Link to={"/categories"}>Categories</Link>/
-        <Link to={"/centers"}>Centers</Link>/
-        <Link to={"/filials"}>Filials</Link>/
+        <Link to={"/categories"}>Categories</Link>
+        <span> / </span>
+        <Link to={"/centers"}>Centers</Link>
+        <span> / </span>
+        <Link to={"/filials"}>Filials</Link>
+        <span> / </span>
         <Link to={"/courses"}>Courses</Link>
       </h1>
       {dataArray.length > 0 ? (

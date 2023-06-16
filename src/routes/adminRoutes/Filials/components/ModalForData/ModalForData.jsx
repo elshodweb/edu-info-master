@@ -3,7 +3,7 @@ import postData from "../../../../../axios/postData";
 import getData from "../../../../../axios/getData";
 import updateData from "../../../../../axios/updateData";
 import ErrorModal from "../../../../../components/ErrorModal/ErrorModal";
-function ModalForData({ isActive, centers, uploadObject, setDataArray }) {
+function ModalForData({ isActive, centers, uploadObject, setDataArray,setUploadObject }) {
   const [obj, setObj] = useState({
     name: "",
     about: "",
@@ -55,12 +55,12 @@ function ModalForData({ isActive, centers, uploadObject, setDataArray }) {
       }, 3000);
     }
   };
-  console.log(obj);
   function submitForm(e) {
     e.preventDefault();
     if (uploadObject) {
       updateData("/filials/" + uploadObject.filial_id, obj).then((res) => {
         func(res);
+        setUploadObject(null);
       });
     } else {
       postData("/filials", obj).then((res) => {

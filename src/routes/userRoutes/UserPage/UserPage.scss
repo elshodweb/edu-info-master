@@ -15,12 +15,12 @@
 .path {
   font-size: 20px;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  a {
+  margin-bottom: 40px;
+  a,span {
     font-size: 18px;
     border-bottom: 2px solid #fff;
     padding: 2px 0px;
-    margin: 0 10px;
+    margin: 0 5px;
     &:not(:last-child) {
       font-weight: 600;
       transition: all 0.3s;
@@ -30,6 +30,20 @@
     }
     &:last-child{
       color: #666;
+    }
+  }
+}
+@media screen and (max-width:920px) {
+  .path{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width:720px) {
+  .path{
+    a,span{
+      line-height: 150%;
+      font-size: 14px;
     }
   }
 }

@@ -3,6 +3,7 @@ import "./Login.scss";
 import { Navigate } from "react-router-dom";
 import axiosInstance from "../../../axios";
 import ErrorModal from "../../../components/ErrorModal/ErrorModal";
+import Loading from "../../../components/Loading/Loading";
 
 function Login({ isAuth, verifyToken }) {
   const [password, setPassword] = useState("");
@@ -25,10 +26,10 @@ function Login({ isAuth, verifyToken }) {
             "Content-Type": "application/json",
           },
         }
-      );
-      if (res.status == 200) {
-        localStorage.setItem("token", res.data.token);
-      }
+        );
+        if (res.status == 200) {
+          localStorage.setItem("token", res.data.token);
+        }
     } catch (error) {
       setMessage(error?.response?.data?.message);
         setTimeout(() => {
@@ -38,7 +39,7 @@ function Login({ isAuth, verifyToken }) {
     verifyToken();
   }
   if (isAuth === null) {
-    return <div>Loading....</div>;
+    return <Loading />;
   }
   if (isAuth) {
     return <Navigate to="/dashboard" />;

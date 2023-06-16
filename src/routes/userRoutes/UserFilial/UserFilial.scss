@@ -26,3 +26,12 @@
   margin-bottom: 10px;
   text-transform: capitalize;
 }
+@media screen and (max-width: 560px) {
+  .filial__name {
+    font-size: 16px;
+    margin: 5px;
+  }
+  .filial__item {
+    font-size: 14px;
+  }
+}

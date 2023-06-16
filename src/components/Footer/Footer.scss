@@ -44,3 +44,13 @@
   text-align: center;
   margin-top: 30px;
 }
+@media screen and (max-width: 880px) {
+  .footer{
+    padding: 20px 0;
+  }
+  .footer__row{
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+}

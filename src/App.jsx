@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import IsAuth from "./routes/adminRoutes/IsAuth/IsAuth";
 import Dashboard from "./routes/adminRoutes/Dashboard/Dashboard";
 import axiosInstance from "./axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./sass/index.scss";
 import Categories from "./routes/adminRoutes/Categories/Table";
 import Centers from "./routes/adminRoutes/Centers/Centers";
@@ -20,8 +20,10 @@ import SingleCourse from "./routes/userRoutes/SingleCourse/SingleCourse";
 function App() {
   const [isAuth, setIsAuth] = useState(null);
   const [message, setMessage] = useState("");
-  const [ids,setIds] = useState(null);
-
+  const [ids, setIds] = useState(JSON.parse(localStorage.getItem("ids")));
+  useEffect(() => {
+    localStorage.setItem("ids", JSON.stringify(ids));
+  }, [ids]);
   async function verifyToken() {
     const token = localStorage.getItem("token");
     if (token) {
@@ -54,10 +56,19 @@ function App() {
         <Route path="*" element={<UserPage />}>
           <Route index element={<About />} />
           <Route path="categories" element={<UserCategory setIds={setIds} />} />
-          <Route path="centers" element={<UserCenter ids={ids} setIds={setIds} />} />
-          <Route path="filials" element={<UserFilial ids={ids} setIds={setIds} />} />
-          <Route path="courses" element={<UserCours ids={ids} setIds={setIds} />} />
-          <Route path="courses/:id" element={<SingleCourse ids={ids}  />} />
+          <Route
+            path="centers"
+            element={<UserCenter ids={ids} setIds={setIds} />}
+          />
+          <Route
+            path="filials"
+            element={<UserFilial ids={ids} setIds={setIds} />}
+          />
+          <Route
+            path="courses"
+            element={<UserCours ids={ids} setIds={setIds} />}
+          />
+          <Route path="courses/:id" element={<SingleCourse ids={ids} />} />
         </Route>
         <Route
           path="login"

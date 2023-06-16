@@ -20,7 +20,7 @@ function Filials() {
     });
     getData("/centers").then((res) => {
       if (res?.status == 200) {
-        setCenters(res.data.filter(i=>i.center_is_active));
+        setCenters(res.data.filter((i) => i.center_is_active));
       }
     });
   }, []);
@@ -50,13 +50,15 @@ function Filials() {
           setModalIsActive(false);
         }}
       >
-      <span className="pluss">+</span> <span>NEW {nameRoute.toUpperCase()}</span>
+        <span className="pluss">+</span>{" "}
+        <span>NEW {nameRoute.toUpperCase()}</span>
       </button>
       <ModalForData
         isActive={modalIsActive}
         setModalIsActive={setModalIsActive}
         uploadObject={uploadObject}
         setDataArray={setDataArray}
+        setUploadObject={setUploadObject}
         centers={centers}
       />
       <table>
