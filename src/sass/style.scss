@@ -1,5 +1,8 @@
 body{
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Ubuntu",Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+strong{
+  font-weight: 700;
 }
 .container{
   width: 100%;
@@ -12,4 +15,7 @@ body{
   .container{
     padding: 0 8px 0;
   }
+}
+.emoji{
+  font-size: 14px;
 }

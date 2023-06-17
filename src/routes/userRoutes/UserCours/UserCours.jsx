@@ -43,7 +43,7 @@ function UserCours({ setIds, ids }) {
                       onClick={() => setIds({ ...ids, cours: item.cours_id })}
                       className="cours__name"
                     >
-                      {item.cours_name}
+                      {item.cours_name} <span className="emoji">&#128279;</span>
                     </div>
                   </Link>
                   <div className="cours__item">

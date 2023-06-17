@@ -42,7 +42,9 @@ function UserCenter({ setIds, ids }) {
                       onClick={() => setIds({ ...ids, center: item.center_id })}
                       to={"/filials"}
                     >
-                      <div className="center__name">{item.center_name}</div>
+                      <div className="center__name">
+                        {item.center_name} <span className="emoji">&#128279;</span>
+                      </div>
                     </Link>
                     <div>
                       <div className="center__item">

@@ -10,9 +10,9 @@
   justify-content: flex-start;
   gap: 100px;
 }
-.footer__title{
+.footer__title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 .footer__logo {
@@ -26,7 +26,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    
   }
   &:hover span {
     border-bottom: 1px solid #fff;
@@ -42,12 +41,11 @@
   margin-top: 30px;
 }
 @media screen and (max-width: 880px) {
-  .footer{
+  .footer {
     padding: 20px 0;
   }
-  .footer__row{
+  .footer__row {
     flex-wrap: wrap;
     gap: 40px;
   }
-  
 }

@@ -6,34 +6,32 @@ import section4 from "./../../../assets/img/section-4.jpg";
 import section5 from "./../../../assets/img/section-5.jpg";
 import { Link } from "react-router-dom";
 function About() {
-  
-  
   return (
     <div className="about">
       <div className="about__title">
-        EDU-INFO : Информационный портал об учебных курсах
+        EDU-INFO : Information portal about training courses{" "}
       </div>
       <div className="about__descr">
         <div className="about__row">
           {" "}
           <img src={section1} alt="descrip-img" />
           <p>
-            Добро пожаловать на наш сайт, посвященный учебным курсам! Здесь вы
-            найдете полезную информацию о различных образовательных программных
-            курсах, доступных в офлайн-формате. Наш сайт предоставляет удобную
-            возможность просмотра информации о курсах по категориям.
+          Welcome to our course site! Here you
+             find useful information about various educational software
+             courses available offline. Our site provides a convenient
+             the ability to view information about courses by category.
           </p>
         </div>
 
         <div className="about__row">
           {" "}
           <p>
-            На каждой странице курса вы сможете ознакомиться с основными
-            деталями, такими как цена, требования к экзамену, контактные
-            телефоны, ссылки на социальные сети, адреса и продолжительность
-            курса. Мы стремимся предоставить полную информацию, которая поможет
-            вам принять решение о выборе наиболее подходящего курса для
-            достижения ваших учебных целей.
+          On each page of the course you will be able to familiarize yourself with the main
+             details such as price, exam requirements, contact
+             phone numbers, social media links, addresses and duration
+             course. We strive to provide complete information that will help
+             you decide on the most suitable course for
+             achieve your learning goals.
           </p>
           <img src={section2} alt="descrip-img" />
         </div>
@@ -41,28 +39,30 @@ function About() {
         <div className="about__row">
           <img src={section4} alt="descrip-img" />{" "}
           <p>
-            Мы также предоставляем возможность связаться с провайдерами курсов
-            напрямую через контактные данные, указанные на странице курса. Это
-            позволяет получить дополнительную информацию или задать вопросы,
-            связанные с конкретным курсом, прежде чем принять окончательное
-            решение.
+          We also provide the opportunity to contact course providers
+             directly through the contact details listed on the course page. This
+             allows you to get more information or ask questions,
+             related to a particular course before making the final
+             solution.
           </p>
         </div>
 
         <div className="about__row">
           {" "}
           <p>
-            Мы постоянно обновляем нашу базу данных курсов, чтобы предложить вам
-            самую актуальную информацию. Наша цель - помочь вам найти лучший
-            курс, который отвечает вашим потребностям и интересам в области
-            образования. Пользуйтесь нашим сайтом, и мы надеемся, что вы найдете
-            именно тот курс, который поможет вам достичь успеха!
+          We are constantly updating our course database to offer you
+             the most up-to-date information. Our goal is to help you find the best
+             a course that meets your needs and interests in the field
+             education. Use our site and we hope you find
+             This is the course that will help you succeed!
           </p>
           <img src={section5} alt="descrip-img" />
         </div>
 
         <div className="about__btn">
-          <Link id="animatedButton" to={"/Categories"}>Курсы</Link>
+          <Link id="animatedButton" to={"/Categories"}>
+            Courses
+          </Link>
         </div>
       </div>
     </div>

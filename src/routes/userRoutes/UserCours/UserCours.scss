@@ -1,7 +1,7 @@
 .cours__info {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #000;
+  background: #e7e7e7;
   border-radius: 5px;
   display: flex;
   gap: 50px;
@@ -9,14 +9,14 @@
 }
 .cours__name {
   display: inline-block;
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #e7e7e7;
   transition: all 0.3s;
   &:hover {
-    border-bottom: 2px solid #000;
+    border-bottom: 3px solid #000;
   }
-  margin: 5px;
-  font-weight: 600;
-  font-size: 20px;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 22px;
   text-transform: capitalize;
 }
 .cours__section {
@@ -42,9 +42,8 @@
     }
   }
 
-  .cours__name{
-
-  font-weight: 600;
-  font-size: 16px;
+  .cours__name {
+    font-weight: 700;
+    font-size: 18px;
   }
 }

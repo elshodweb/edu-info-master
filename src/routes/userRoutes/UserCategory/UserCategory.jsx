@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./UserCategory.scss";
-import icon from "./../../../assets/isons/rectangle.png";
+import rectangle from "./../../../assets/isons/rectangle.png";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
@@ -35,7 +35,7 @@ function UserCategory({ ids, setIds }) {
                       }}
                       className="category-name"
                     >
-                      <img width={25} src={icon} alt="icon" />
+                      <img width={25} src={rectangle} alt="icon" />
                       <span>{item.category_name}</span>
                     </div>
                   </Link>

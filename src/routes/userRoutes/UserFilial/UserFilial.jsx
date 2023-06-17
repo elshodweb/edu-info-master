@@ -41,7 +41,7 @@ function UserFilial({ setIds, ids }) {
                     onClick={() => setIds({ ...ids, filial: item.filial_id })}
                     className="filial__name"
                   >
-                    {item.filial_name}
+                    {item.filial_name} <span className="emoji">&#128279;</span>
                   </div>
                 </Link>
                 <div className="filial__item">

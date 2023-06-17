@@ -16,32 +16,38 @@
   font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 40px;
-  a,span {
+  a{
     font-size: 18px;
     border-bottom: 2px solid #fff;
     padding: 2px 0px;
     margin: 0 5px;
     &:not(:last-child) {
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s;
       &:hover {
         border-bottom: 2px solid #000;
       }
     }
-    &:last-child{
+    &:last-child {
       color: #666;
     }
   }
+  span{
+
+    font-weight: 700;
+    margin: 0 5px;
+  }
 }
-@media screen and (max-width:920px) {
-  .path{
+@media screen and (max-width: 920px) {
+  .path {
     display: flex;
     flex-wrap: wrap;
   }
 }
-@media screen and (max-width:720px) {
-  .path{
-    a,span{
+@media screen and (max-width: 720px) {
+  .path {
+    a,
+    span {
       line-height: 150%;
       font-size: 14px;
     }

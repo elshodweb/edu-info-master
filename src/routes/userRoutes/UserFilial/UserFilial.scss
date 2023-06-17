@@ -1,9 +1,8 @@
-
 .filial__info {
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  border: 1px solid #000;
+  background: #e7e7e7;
   max-width: 500px;
 }
 .filial__item {
@@ -14,21 +13,20 @@
 }
 .filial__name {
   display: inline-block;
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #e7e7e7;
   transition: all 0.3s;
   &:hover {
-    border-bottom: 2px solid #000;
+    border-bottom: 3px solid #000;
   }
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   margin: 10px;
   margin-bottom: 10px;
   text-transform: capitalize;
 }
 @media screen and (max-width: 560px) {
   .filial__name {
-    font-size: 16px;
-    margin: 5px;
+    font-size: 18px;
   }
   .filial__item {
     font-size: 14px;

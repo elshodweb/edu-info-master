@@ -6,7 +6,7 @@ function Header() {
     <div className="header">
       <div className="container">
         <div className="header__row">
-          <div className="header__logo">EDU-INFO</div>
+          <Link to={'/'} className="header__logo">EDU-INFO</Link>
           <div className="header__nav">
             <Link className="header__nav-item" to={"/"}>
               About

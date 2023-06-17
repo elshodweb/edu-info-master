@@ -37,8 +37,8 @@ function SingleCourse() {
         <span> / </span>
         <Link to={"/courses/" + data.cours_id}>{data.cours_name}</Link>
       </h1>
-      <div className="single-cours__item">
-        <strong>name: </strong> <span>{data.cours_name}</span>
+      <div className="single-cours__item single-cours__item">
+        <strong>{data.cours_name}</strong>
       </div>
       <div className="single-cours__item">
         <strong>price: </strong> <span>{data.cours_price}</span>
@@ -85,7 +85,7 @@ function SingleCourse() {
           <span>
             <img width={20} src={clock} alt="clock" />
           </span>{" "}
-          <span>{data.cours_created_at.split("T")[0]}</span>
+          <strong>{data.cours_created_at.split("T")[0]}</strong>
         </strong>
       </div>
     </div>
