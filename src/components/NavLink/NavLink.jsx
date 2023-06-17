@@ -10,10 +10,10 @@ function NavLink({ path, text, url }) {
   );
 
   return (
-    <div className={pathCut === path ? "link active" : "link"}>
+    <Link to={path} className={pathCut === path ? "link active" : "link"}>
       <img width={30} src={url} alt="icon" />
-      <Link to={path}>{text}</Link>
-    </div>
+      <sapn>{text}</sapn>
+    </Link>
   );
 }
 
