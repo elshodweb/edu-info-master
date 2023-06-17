@@ -11,10 +11,10 @@ function SingleCourse({ ids }) {
 
   useEffect(() => {
     getData("/courses/" + id).then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setData(res.data);
         getData("/filials/" + res.data.cours_filial_id).then((res) => {
-          if (res?.status == 200) {
+          if (res?.status === 200) {
             setFilial(res.data);
           }
         });

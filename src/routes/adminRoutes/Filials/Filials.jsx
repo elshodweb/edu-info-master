@@ -14,12 +14,12 @@ function Filials() {
 
   useEffect(() => {
     getData(arrayRouteURL).then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(res.data);
       }
     });
     getData("/centers").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setCenters(res.data.filter((i) => i.center_is_active));
       }
     });
@@ -27,9 +27,9 @@ function Filials() {
 
   function onDelete(id) {
     deleteData(arrayRouteURL + "/" + id).then((res) => {
-      if (res.status == 200) {
+      if (res.status === 200) {
         getData(arrayRouteURL).then((res) => {
-          if (res?.status == 200) {
+          if (res?.status === 200) {
             setDataArray(res.data);
           }
         });
@@ -88,7 +88,7 @@ function Filials() {
                   <td>
                     {centers?.length > 0 &&
                       centers?.find(
-                        (el) => item.filial_center_id == el.center_id
+                        (el) => item.filial_center_id === el.center_id
                       )?.center_name}
                   </td>
                   <td className="btn">

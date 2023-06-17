@@ -12,7 +12,7 @@ function UserCenter({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
     getData("/centers").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(
           res.data.filter(
             (i) => i.center_is_active && i.center_category_id === ids.category
@@ -62,7 +62,9 @@ function UserCenter({ setIds, ids }) {
                   <div className="center__section">
                     <div className="center__descr">{item.center_about}</div>
                     <div className="center__item center__item-date">
-                      <span><img width={20} src={clock} alt="clock" /> </span>
+                      <span>
+                        <img width={20} src={clock} alt="clock" />{" "}
+                      </span>
                       <strong>
                         {item.center_created_at
                           .split(".")[0]

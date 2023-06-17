@@ -6,15 +6,14 @@
 }
 .footer__row {
   display: flex;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 100px;
 }
 .footer__title{
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 20px;
-  
 }
 .footer__section {
 }

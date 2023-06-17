@@ -3,7 +3,13 @@ import postData from "../../../../../axios/postData";
 import getData from "../../../../../axios/getData";
 import updateData from "../../../../../axios/updateData";
 import ErrorModal from "../../../../../components/ErrorModal/ErrorModal";
-function ModalForData({ isActive, filials, uploadObject, setDataArray,setUploadObject }) {
+function ModalForData({
+  isActive,
+  filials,
+  uploadObject,
+  setDataArray,
+  setUploadObject,
+}) {
   const [obj, setObj] = useState({
     name: "",
     about: "",
@@ -44,7 +50,7 @@ function ModalForData({ isActive, filials, uploadObject, setDataArray,setUploadO
   let func = (res) => {
     if (res && res.status === 200) {
       getData("/courses").then((res) => {
-        if (res?.status == 200) {
+        if (res?.status === 200) {
           setDataArray(res.data);
         }
       });

@@ -10,7 +10,7 @@ function UserFilial({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
     getData("/filials").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(
           res.data.filter(
             (i) => i.filial_is_active && i.filial_center_id === ids.center
@@ -18,7 +18,7 @@ function UserFilial({ setIds, ids }) {
         );
       }
     });
-  }, []);
+  }, [ids.center]);
   if (dataArray === null) {
     return <Loading />;
   }

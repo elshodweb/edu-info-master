@@ -26,15 +26,15 @@ function Login({ isAuth, verifyToken }) {
             "Content-Type": "application/json",
           },
         }
-        );
-        if (res.status == 200) {
-          localStorage.setItem("token", res.data.token);
-        }
+      );
+      if (res.status === 200) {
+        localStorage.setItem("token", res.data.token);
+      }
     } catch (error) {
       setMessage(error?.response?.data?.message);
-        setTimeout(() => {
-          setMessage("");
-        }, 2000);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     }
     verifyToken();
   }

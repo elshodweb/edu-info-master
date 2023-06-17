@@ -54,7 +54,8 @@ function App() {
       <ErrorModal message={message} />
       <Routes>
         <Route
-          path="login"
+          path="*"
+          index
           element={<Login isAuth={isAuth} verifyToken={verifyToken} />}
         />
         <Route

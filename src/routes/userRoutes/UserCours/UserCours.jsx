@@ -8,7 +8,7 @@ function UserCours({ setIds, ids }) {
 
   useEffect(() => {
     getData("/courses").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(
           res.data.filter(
             (i) => i.cours_is_active && i.cours_filial_id === ids.filial
@@ -16,7 +16,7 @@ function UserCours({ setIds, ids }) {
         );
       }
     });
-  }, []);
+  }, [ids.filial]);
   if (dataArray === null) {
     return <Loading />;
   }

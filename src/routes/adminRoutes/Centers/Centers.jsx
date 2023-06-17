@@ -14,21 +14,21 @@ function Centers() {
 
   useEffect(() => {
     getData(arrayRouteURL).then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(res.data);
       }
     });
     getData("/categories").then((res) => {
-      if (res?.status == 200) {
-        setCatgories(res.data.filter(i=>i.category_is_active));
+      if (res?.status === 200) {
+        setCatgories(res.data.filter((i) => i.category_is_active));
       }
     });
   }, []);
   function onDelete(id) {
     deleteData(arrayRouteURL + "/" + id).then((res) => {
-      if (res.status == 200) {
+      if (res.status === 200) {
         getData(arrayRouteURL).then((res) => {
-          if (res?.status == 200) {
+          if (res?.status === 200) {
             setDataArray(res.data);
           }
         });
@@ -49,7 +49,8 @@ function Centers() {
           setModalIsActive(false);
         }}
       >
-      <span className="pluss">+</span> <span>NEW {nameRoute.toUpperCase()}</span>
+        <span className="pluss">+</span>{" "}
+        <span>NEW {nameRoute.toUpperCase()}</span>
       </button>
       <ModalForData
         isActive={modalIsActive}
@@ -88,7 +89,7 @@ function Centers() {
                   <td>
                     {categories?.length > 0 &&
                       categories?.find((el) => {
-                        return item.center_category_id == el.category_id;
+                        return item.center_category_id === el.category_id;
                       })?.category_name}
                   </td>
                   <td className="btn">

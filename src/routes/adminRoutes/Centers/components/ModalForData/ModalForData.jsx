@@ -43,7 +43,7 @@ function ModalForData({
   let func = (res) => {
     if (res && res.status === 200) {
       getData("/centers").then((res) => {
-        if (res?.status == 200) {
+        if (res?.status === 200) {
           setDataArray(res.data);
         }
       });

@@ -4,11 +4,11 @@ import icon from "./../../../assets/isons/rectangle.png";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
-function UserCategory({ ids,setIds }) {
+function UserCategory({ ids, setIds }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
     getData("/categories").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(res.data);
       }
     });
@@ -31,7 +31,7 @@ function UserCategory({ ids,setIds }) {
                   <Link to={"/centers"}>
                     <div
                       onClick={() => {
-                        setIds({...ids, category: item.category_id });
+                        setIds({ ...ids, category: item.category_id });
                       }}
                       className="category-name"
                     >

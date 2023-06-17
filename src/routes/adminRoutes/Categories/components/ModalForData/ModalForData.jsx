@@ -21,7 +21,7 @@ function ModalForData({ isActive, uploadObject, setDataArray }) {
         (res) => {
           if (res && res.status === 200) {
             getData("/categories").then((res) => {
-              if (res?.status == 200) {
+              if (res?.status === 200) {
                 setDataArray(res.data);
               }
             });
@@ -38,7 +38,7 @@ function ModalForData({ isActive, uploadObject, setDataArray }) {
       postData("/categories", { name }).then((res) => {
         if (res && res.status === 200) {
           getData("/categories").then((res) => {
-            if (res?.status == 200) {
+            if (res?.status === 200) {
               setDataArray(res.data);
             }
           });

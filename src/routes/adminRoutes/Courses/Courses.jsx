@@ -14,12 +14,12 @@ function Courses() {
 
   useEffect(() => {
     getData(arrayRouteURL).then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setDataArray(res.data);
       }
     });
     getData("/filials").then((res) => {
-      if (res?.status == 200) {
+      if (res?.status === 200) {
         setFilials(res.data);
       }
     });
@@ -27,9 +27,9 @@ function Courses() {
 
   function onDelete(id) {
     deleteData(arrayRouteURL + "/" + id).then((res) => {
-      if (res.status == 200) {
+      if (res.status === 200) {
         getData(arrayRouteURL).then((res) => {
-          if (res?.status == 200) {
+          if (res?.status === 200) {
             setDataArray(res.data);
           }
         });
@@ -93,8 +93,9 @@ function Courses() {
                   <td>{item.cours_started_date}</td>
                   <td>
                     {filials.length > 0 &&
-                      filials.find((el) => item.cours_filial_id == el.filial_id)
-                        .filial_name}
+                      filials.find(
+                        (el) => item.cours_filial_id === el.filial_id
+                      ).filial_name}
                   </td>
                   <td className="btn">
                     <button onClick={() => onDelete(item.cours_id)}>
