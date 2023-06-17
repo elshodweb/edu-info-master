@@ -6,6 +6,7 @@ import telegram from "../../../assets/isons/telegram-black.png";
 import location from "../../../assets/isons/location-black.png";
 import phone from "../../../assets/isons/phone-black.png";
 import Loading from "../../../components/Loading/Loading";
+import NotFoundItem from "../../../components/NotFoundItem/NotFoundItem";
 function UserFilial({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
   useEffect(() => {
@@ -64,7 +65,7 @@ function UserFilial({ setIds, ids }) {
           );
         })
       ) : (
-        <h2>Bu Categorya bo'yicha hechnarsa topilmadi</h2>
+        <NotFoundItem thisElement={'filial'} text={'center'}/>
       )}
     </div>
   );

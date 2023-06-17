@@ -3,6 +3,7 @@ import "./UserCours.scss";
 import getData from "../../../axios/getData";
 import { Link } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
+import NotFoundItem from "../../../components/NotFoundItem/NotFoundItem";
 function UserCours({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
 
@@ -72,7 +73,7 @@ function UserCours({ setIds, ids }) {
           );
         })
       ) : (
-        <h2>Bu Categorya bo'yicha hechnarsa topilmadi</h2>
+        <NotFoundItem thisElement={'cours'} text={'filial'}/>
       )}
     </div>
   );

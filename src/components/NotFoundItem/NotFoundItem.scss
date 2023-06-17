@@ -1,0 +1,28 @@
+.not-found{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  flex-direction: column;
+  gap: 30px;
+  img{
+    border-radius: 50%;
+  }
+  &__title{
+    font-size: 36px;
+    line-height: 150%;
+  }
+}
+@media screen and (max-width:790px) {
+  .not-found{
+    &__title{
+      font-size: 24px;
+      text-align: center;
+      text-indent: 0;
+    }
+    img{
+      max-width: 150px;
+      width: 100%;
+    }
+  }
+}

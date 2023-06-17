@@ -7,6 +7,7 @@ import instagram from "../../../assets/isons/instagram-black.png";
 import phone from "../../../assets/isons/phone-black.png";
 import clock from "../../../assets/isons/clock.png";
 import Loading from "../../../components/Loading/Loading";
+import NotFoundItem from "../../../components/NotFoundItem/NotFoundItem";
 
 function UserCenter({ setIds, ids }) {
   let [dataArray, setDataArray] = useState(null);
@@ -80,7 +81,7 @@ function UserCenter({ setIds, ids }) {
           );
         })
       ) : (
-        <h2>Bu Categorya bo'yicha hechnarsa topilmadi</h2>
+        <NotFoundItem thisElement={'center'} text={'category'}/>
       )}
     </div>
   );
