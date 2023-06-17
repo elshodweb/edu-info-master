@@ -2,7 +2,6 @@ import React from "react";
 import "./About.scss";
 import section1 from "./../../../assets/img/section-1.jpg";
 import section2 from "./../../../assets/img/section-2.jpg";
-import section3 from "./../../../assets/img/section-3.jpg";
 import section4 from "./../../../assets/img/section-4.jpg";
 import section5 from "./../../../assets/img/section-5.jpg";
 import { Link } from "react-router-dom";
@@ -17,7 +16,7 @@ function About() {
       <div className="about__descr">
         <div className="about__row">
           {" "}
-          <img src={section1} alt="image" />
+          <img src={section1} alt="descrip-img" />
           <p>
             Добро пожаловать на наш сайт, посвященный учебным курсам! Здесь вы
             найдете полезную информацию о различных образовательных программных
@@ -36,11 +35,11 @@ function About() {
             вам принять решение о выборе наиболее подходящего курса для
             достижения ваших учебных целей.
           </p>
-          <img src={section2} alt="image" />
+          <img src={section2} alt="descrip-img" />
         </div>
 
         <div className="about__row">
-          <img src={section4} alt="image" />{" "}
+          <img src={section4} alt="descrip-img" />{" "}
           <p>
             Мы также предоставляем возможность связаться с провайдерами курсов
             напрямую через контактные данные, указанные на странице курса. Это
@@ -59,7 +58,7 @@ function About() {
             образования. Пользуйтесь нашим сайтом, и мы надеемся, что вы найдете
             именно тот курс, который поможет вам достичь успеха!
           </p>
-          <img src={section5} alt="image" />
+          <img src={section5} alt="descrip-img" />
         </div>
 
         <div className="about__btn">

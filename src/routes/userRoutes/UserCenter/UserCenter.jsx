@@ -20,7 +20,7 @@ function UserCenter({ setIds, ids }) {
         );
       }
     });
-  }, []);
+  }, [ids.category]);
   if (dataArray === null) {
     return <Loading />;
   }

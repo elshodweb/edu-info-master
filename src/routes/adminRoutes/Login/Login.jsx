@@ -11,7 +11,7 @@ function Login({ isAuth, verifyToken }) {
   const [message, setMessage] = useState("");
   useEffect(() => {
     verifyToken();
-  }, []);
+  }, [verifyToken]);
   async function onLogin(e) {
     e.preventDefault();
     try {

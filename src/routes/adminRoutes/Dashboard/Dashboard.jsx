@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import "./Dashboard.scss";
 import NavBar from "../../../components/NavBar/NavBar";
-import { Outlet, Routes, useLocation } from "react-router-dom";
-function Dashboard({ routerPath }) {
+import { Outlet, useLocation } from "react-router-dom";
+function Dashboard() {
   let { pathname } = useLocation();
   const dashboardPath = '/dashboard';
   

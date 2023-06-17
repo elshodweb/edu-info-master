@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import clock from "../../../assets/isons/clock.png";
 import getData from "../../../axios/getData";
 import Loading from "../../../components/Loading/Loading";
-function SingleCourse({ ids }) {
+function SingleCourse() {
   let { id } = useParams();
   let [data, setData] = useState(null);
   let [filial, setFilial] = useState(null);
@@ -20,7 +20,7 @@ function SingleCourse({ ids }) {
         });
       }
     });
-  }, []);
+  }, [id]);
   if (data === null || filial === null) {
     return <Loading />;
   }

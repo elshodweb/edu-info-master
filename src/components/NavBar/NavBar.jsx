@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavBar.scss";
 import NavLink from "../NavLink/NavLink";
-import categories from "../../assets/isons/categories.png"
-import centers from "../../assets/isons/centers.png"
-import filials from "../../assets/isons/filials.png"
-import courses from "../../assets/isons/courses.png"
-import logout from "../../assets/isons/logout.png"
-import { useLocation } from "react-router-dom";
+import categories from "../../assets/isons/categories.png";
+import centers from "../../assets/isons/centers.png";
+import filials from "../../assets/isons/filials.png";
+import courses from "../../assets/isons/courses.png";
+import logout from "../../assets/isons/logout.png";
 function NavBar() {
-  
   return (
     <div className="nav-bar">
       <div className="logo">
@@ -30,7 +28,7 @@ function NavBar() {
         className="logout"
       >
         <img width={20} src={logout} alt="logout" />
-        <a href="#">CHIQISH</a>
+        <span >CHIQISH</span>
       </div>
     </div>
   );
