@@ -84,7 +84,7 @@ function SingleCourse() {
         <strong>
           <span>
             <img width={20} src={clock} alt="clock" />
-          </span>{" "}
+          </span>
           <strong>{data.cours_created_at.split("T")[0]}</strong>
         </strong>
       </div>
