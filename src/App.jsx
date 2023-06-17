@@ -30,7 +30,7 @@ function App() {
       try {
         let res = await axiosInstance.get("/verify-token", {
           headers: {
-            ["access-token"]: token,
+            "access-token": token,
           },
         });
 
