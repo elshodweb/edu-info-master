@@ -4,7 +4,7 @@ const deleteData = async (path) => {
   try {
     let res = await axiosInstance.delete(path, {
       headers: {
-        ["access-token"]: localStorage.getItem("token"),
+        "access-token": localStorage.getItem("token"),
       },
     });
     if (res.status === 200) {

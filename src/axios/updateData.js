@@ -4,7 +4,7 @@ const updateData = async (path, data) => {
   try {
     let res = await axiosInstance.put(path, data, {
       headers: {
-        ["access-token"]: localStorage.getItem("token"),
+        "access-token": localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
     });
