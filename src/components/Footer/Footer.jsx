@@ -13,7 +13,7 @@ function Footer() {
             <div className="footer__logo">EDU-INFO</div>
           </div>
           <div className="footer__section">
-            <div className="footer__title">Phone numbers: </div>
+            <div className="footer__title">Телефонные номера: </div>
             <div className="footer__contact">
               <a target="_blank" href="tel:+998931730403">
                 <img width={20} src={phone} alt="phone" />
@@ -29,7 +29,7 @@ function Footer() {
           </div>
 
           <div className="footer__section">
-            <div className="footer__title">Social network address: </div>
+            <div className="footer__title">Наши социальные сети: </div>
 
             <div className="footer__contact">
               <a target="_blank" href="https://t.me/the_elshod">
