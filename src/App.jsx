@@ -53,6 +53,21 @@ function App() {
     <div className="App">
       <ErrorModal message={message} />
       <Routes>
+        <Route
+          path="login"
+          element={<Login isAuth={isAuth} verifyToken={verifyToken} />}
+        />
+        <Route
+          path="dashboard"
+          element={<IsAuth isAuth={isAuth} verifyToken={verifyToken} />}
+        >
+          <Route path="*" element={<Dashboard />}>
+            <Route index element={<Categories />} />
+            <Route path="centers" element={<Centers />} />
+            <Route path="filials" element={<Filials />} />
+            <Route path="courses" element={<Courses />} />
+          </Route>
+        </Route>
         <Route path="*" element={<UserPage />}>
           <Route index element={<About />} />
           <Route path="categories" element={<UserCategory setIds={setIds} />} />
@@ -69,21 +84,6 @@ function App() {
             element={<UserCours ids={ids} setIds={setIds} />}
           />
           <Route path="courses/:id" element={<SingleCourse ids={ids} />} />
-        </Route>
-        <Route
-          path="login"
-          element={<Login isAuth={isAuth} verifyToken={verifyToken} />}
-        />
-        <Route
-          path="*"
-          element={<IsAuth isAuth={isAuth} verifyToken={verifyToken} />}
-        >
-          <Route path="dashboard" element={<Dashboard />}>
-            <Route index element={<Categories />} />
-            <Route path="centers" element={<Centers />} />
-            <Route path="filials" element={<Filials />} />
-            <Route path="courses" element={<Courses />} />
-          </Route>
         </Route>
       </Routes>
     </div>
