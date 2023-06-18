@@ -6,7 +6,7 @@ import { Outlet, useLocation } from "react-router-dom";
 function Dashboard() {
   let { pathname } = useLocation();
   // console.log(!!localStorage.getItem("nav"));
-  const [isOpen, setIsOpen] = useState(localStorage.getItem("nav")=="true");
+  const [isOpen, setIsOpen] = useState(localStorage.getItem("nav")==="true");
   console.log(isOpen);
   const dashboardPath = "/dashboard";
   function openNav() {
