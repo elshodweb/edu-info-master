@@ -12,7 +12,7 @@ function NavLink({ path, text, url }) {
   return (
     <Link to={path} className={pathCut === path ? "link active" : "link"}>
       <img width={30} src={url} alt="icon" />
-      <sapn>{text}</sapn>
+      <span>{text}</span>
     </Link>
   );
 }

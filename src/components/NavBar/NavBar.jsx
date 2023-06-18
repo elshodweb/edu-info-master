@@ -6,9 +6,9 @@ import centers from "../../assets/isons/centers.png";
 import filials from "../../assets/isons/filials.png";
 import courses from "../../assets/isons/courses.png";
 import logout from "../../assets/isons/logout.png";
-function NavBar() {
+function NavBar({isOpen}) {
   return (
-    <div className="nav-bar">
+    <div className={isOpen?"open nav-bar":"nav-bar"}>
       <div className="logo">
         EDU-INFO
         <hr />
