@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Dashboard.scss";
 import NavBar from "../../../components/NavBar/NavBar";
 import menu from "./../../../assets/isons/menu.png";
