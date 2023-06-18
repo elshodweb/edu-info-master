@@ -33,6 +33,7 @@ function ModalForData({
         courseStartedDate: uploadObject.cours_started_date,
         filialId: uploadObject.cours_filial_id,
       });
+      
     } else {
       setObj({
         name: "",

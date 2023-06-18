@@ -5,7 +5,7 @@ import deleteData from "../../../axios/deleteData";
 import ErrorModal from "../../../components/ErrorModal/ErrorModal";
 const arrayRouteURL = "/centers";
 const nameRoute = "center";
-function Centers() {
+function Centers({ toTop }) {
   let [dataArray, setDataArray] = useState([]);
   let [modalIsActive, setModalIsActive] = useState();
   const [message, setMessage] = useState("");
@@ -98,7 +98,12 @@ function Centers() {
                     </button>
                   </td>
                   <td className="btn">
-                    <button onClick={() => setUploadObject(item)}>
+                    <button
+                      onClick={() => {
+                        setUploadObject(item);
+                        toTop();
+                      }}
+                    >
                       Update
                     </button>
                   </td>

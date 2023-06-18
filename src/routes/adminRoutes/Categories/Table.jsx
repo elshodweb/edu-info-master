@@ -5,7 +5,7 @@ import deleteData from "../../../axios/deleteData";
 import ErrorModal from "../../../components/ErrorModal/ErrorModal";
 const arrayRouteURL = "/categories";
 const nameRoute = "category";
-function Table() {
+function Table({ toTop }) {
   let [dataArray, setDataArray] = useState([]);
   let [modalIsActive, setModalIsActive] = useState();
   const [message, setMessage] = useState("");
@@ -74,7 +74,12 @@ function Table() {
                     </button>
                   </td>
                   <td className="btn">
-                    <button onClick={() => setUploadObject(item)}>
+                    <button
+                      onClick={() => {
+                        setUploadObject(item);
+                        toTop();
+                      }}
+                    >
                       Update
                     </button>
                   </td>

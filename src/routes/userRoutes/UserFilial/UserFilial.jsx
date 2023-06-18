@@ -57,7 +57,6 @@ function UserFilial({ setIds, ids }) {
                 </div>
                 <div className="filial__item">
                   <img width={20} src={telegram} alt="telegram" />
-
                   <span>{item.filial_telegram}</span>
                 </div>
               </div>

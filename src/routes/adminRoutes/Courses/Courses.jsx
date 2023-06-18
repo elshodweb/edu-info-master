@@ -5,7 +5,7 @@ import deleteData from "../../../axios/deleteData";
 import ErrorModal from "../../../components/ErrorModal/ErrorModal";
 const arrayRouteURL = "/courses";
 const nameRoute = "cours";
-function Courses() {
+function Courses({ toTop }) {
   let [dataArray, setDataArray] = useState([]);
   let [modalIsActive, setModalIsActive] = useState();
   const [message, setMessage] = useState("");
@@ -103,7 +103,12 @@ function Courses() {
                     </button>
                   </td>
                   <td className="btn">
-                    <button onClick={() => setUploadObject(item)}>
+                    <button
+                      onClick={() => {
+                        setUploadObject(item);
+                        toTop();
+                      }}
+                    >
                       Update
                     </button>
                   </td>

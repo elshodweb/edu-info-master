@@ -49,6 +49,36 @@ function App() {
       setIsAuth(false);
     }
   }
+
+  function scrollToTopSmoothly() {
+    var duration = 10000; // Длительность анимации в миллисекундах
+    var start = null;
+    var element = document.documentElement;
+    var startScrollTop = element.scrollTop;
+    var change = 0 - startScrollTop;
+    var currentTime = 0;
+  
+    function animateScroll(timestamp) {
+      if (!start) start = timestamp;
+      currentTime += timestamp - start;
+      var val = easeInOutQuad(currentTime, startScrollTop, change, duration);
+      element.scrollTop = val;
+  
+      if (currentTime < duration) {
+        window.requestAnimationFrame(animateScroll);
+      }
+    }
+  
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+  
+    window.requestAnimationFrame(animateScroll);
+  }
+
   return (
     <div className="App">
       <ErrorModal message={message} />
@@ -63,10 +93,10 @@ function App() {
           element={<IsAuth isAuth={isAuth} verifyToken={verifyToken} />}
         >
           <Route path="*" element={<Dashboard />}>
-            <Route index element={<Categories />} />
-            <Route path="centers" element={<Centers />} />
-            <Route path="filials" element={<Filials />} />
-            <Route path="courses" element={<Courses />} />
+            <Route index element={<Categories toTop={scrollToTopSmoothly} />} />
+            <Route path="centers" element={<Centers toTop={scrollToTopSmoothly} />} />
+            <Route path="filials" element={<Filials toTop={scrollToTopSmoothly} />} />
+            <Route path="courses" element={<Courses toTop={scrollToTopSmoothly} />} />
           </Route>
         </Route>
         <Route path="*" element={<UserPage />}>
