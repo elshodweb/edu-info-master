@@ -5,11 +5,13 @@ import menu from "./../../../assets/isons/menu.png";
 import { Outlet, useLocation } from "react-router-dom";
 function Dashboard() {
   let { pathname } = useLocation();
-  const [isOpen, setIsOpen] = useState(localStorage.getItem("nav"));
+  // console.log(!!localStorage.getItem("nav"));
+  const [isOpen, setIsOpen] = useState(localStorage.getItem("nav")=="true");
+  console.log(isOpen);
   const dashboardPath = "/dashboard";
   function openNav() {
     setIsOpen(!isOpen);
-    localStorage.setItem("nav", isOpen);
+    localStorage.setItem("nav", !isOpen);
   }
   const path = pathname.substring(
     pathname.indexOf(dashboardPath) + dashboardPath.length + 1
