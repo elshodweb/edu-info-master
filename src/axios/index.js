@@ -1,6 +1,6 @@
 import axios from "axios";
 const axiosInstance = axios.create({
-  baseURL: "http://13.51.206.194/",
+  baseURL: "https://education-a3o3.onrender.com/",
   
 });
 
