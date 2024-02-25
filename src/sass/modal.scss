@@ -1,9 +1,8 @@
 .modal {
   padding: 10px;
-  border: 1px solid #000;
   max-width: max-content;
   margin: 10px 0 20px;
-  background: #b5b5b5;
+  background: rgba(189, 198, 216, 0.6274509804);
   border-radius: 4px;
   .title-modal {
     margin-bottom: 10px;
@@ -13,20 +12,30 @@
   button {
     margin: 2px;
     padding: 5px 10px;
-    border: 1px solid #000;
+    border: none;
+    outline: none;
+    transition: all 0.2s;
+    &:focus {
+      box-shadow: 2px 2px 5px #555;
+    }
   }
-  input::placeholder,button {
+  input::placeholder,
+  button {
     text-transform: capitalize;
   }
-  textarea{
-
+  textarea {
     margin: 2px;
     padding: 5px 10px;
-    border: 1px solid #000;
     max-width: 500px;
     width: 100%;
     line-height: 150%;
     resize: none;
     height: 200px;
+    outline: none;
+    border-radius: 10px;
+    transition: all 0.2s;
+    &:focus {
+      box-shadow: 2px 2px 5px #555;
+    }
   }
 }

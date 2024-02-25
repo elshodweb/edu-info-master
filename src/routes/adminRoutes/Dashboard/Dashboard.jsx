@@ -5,11 +5,9 @@ import menu from "./../../../assets/isons/menu.png";
 import { Outlet, useLocation } from "react-router-dom";
 function Dashboard() {
   let { pathname } = useLocation();
-  // console.log(!!localStorage.getItem("nav"));
   const [isOpen, setIsOpen] = useState(
     localStorage.getItem("nav") === "false" ? false : true
   );
-  console.log(isOpen);
   const dashboardPath = "/dashboard";
   function openNav() {
     setIsOpen(!isOpen);
@@ -24,8 +22,11 @@ function Dashboard() {
       <NavBar isOpen={isOpen} />
       <main className={isOpen ? "open main" : "main"}>
         <div className="dashbaord__row">
-          <button onClick={openNav}>
-            <img width={40} src={menu} alt="menu" />
+          <button
+            onClick={openNav}
+            className={isOpen ? "btn_open active" : "btn_open"}
+          >
+            <img src={menu} alt="menu" />
           </button>
           <h1 className="title">{path ? path.toUpperCase() : "CATEGORIES"}</h1>
         </div>

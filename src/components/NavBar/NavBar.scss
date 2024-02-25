@@ -1,6 +1,6 @@
 .nav-bar {
-  width: 308px;
-  background: #000;
+  width: 208px;
+  background: #004;
   padding: 30px 24px;
   padding-right: 0;
   min-height: 100vh;
@@ -48,7 +48,7 @@
     gap: 10px;
   }
   .link.active {
-    background: #383838;
+    background: #116;
     border-radius: 15px 0 0 15px;
   }
   .logout {
